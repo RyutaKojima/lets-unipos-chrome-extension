@@ -4,5 +4,9 @@
   "main": "index.js",
   "repository": "ssh://git@personal.github.com/RyutaKojima/lets-unipos-chrome-extension.git",
   "author": "RyutaKojima",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build:publish": "yarn zip",
+    "zip": "VER=`grep -o '\"version\": \"\\([0-9.]\\+\\)\"' ./src/manifest.json | grep -o '[0-9.]\\+'` && mkdir -p ./publish && zip -r \"./publish/lets-unipos-${VER}.zip\" ./src"
+  }
 }
