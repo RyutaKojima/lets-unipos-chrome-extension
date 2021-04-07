@@ -8,7 +8,9 @@ const setNextNotifyTime = () => {
     const now = new Date();
 
     nextNotifyTime = now;
-    if (now.getHours() >= 13) {
+    if (now.getHours() >= 17) {
+        nextNotifyTime.setHours(now.getHours() + 1, 0, 0, 0);
+    } else if (now.getHours() >= 13) {
         nextNotifyTime.setHours(17, 30, 0, 0);
     } else if (now.getHours() >= 9) {
         nextNotifyTime.setHours(13, 0, 0, 0);
