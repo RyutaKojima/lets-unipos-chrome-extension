@@ -1,0 +1,8 @@
+{
+  "name": "lets-unipos-chrome-extension",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "ssh://git@personal.github.com/RyutaKojima/lets-unipos-chrome-extension.git",
+  "author": "RyutaKojima",
+  "license": "MIT"
+}
