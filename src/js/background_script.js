@@ -1,3 +1,13 @@
+const uniposUrlPattern = [
+    'https://unipos.me/login*',
+    'https://unipos.me/',
+    'https://unipos.me/all',
+    'https://unipos.me/follow',
+    'https://unipos.me/pickup',
+    'https://unipos.me/received',
+    'https://unipos.me/sent',
+    'https://unipos.me/clapped',
+];
 const uniposUrl = 'https://unipos.me/all';
 const optionUrl = chrome.runtime.getURL('options/options.html');
 
@@ -45,7 +55,7 @@ const openUnipos = (isActive) => {
 }
 
 const openUniposIfNotOpened = () => {
-    chrome.tabs.query({url: uniposUrl}, (uniposPages) => {
+    chrome.tabs.query({url: uniposUrlPattern}, (uniposPages) => {
         if (uniposPages.length === 0) {
             // NOTE: active にしないと、UniposのSPAが構築されない
             openUnipos(true);
